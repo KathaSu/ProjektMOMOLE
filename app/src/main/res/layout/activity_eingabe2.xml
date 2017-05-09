@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.momole.de.projektmomole.EingabeActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="37dp" />
 </android.support.constraint.ConstraintLayout>
