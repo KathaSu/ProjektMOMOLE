@@ -1,5 +1,6 @@
 package com.momole.de.projektmomole;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -81,17 +82,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            // Verbindung zu Eingabe erstellen
+            Intent eingabe = new Intent (MainActivity.this, EingabeActivity.class);
+            startActivity(eingabe);
+
         } else if (id == R.id.nav_gallery) {
+            // Verbindung zu Ausgabe erstellen
+            Intent ausgabe = new Intent (MainActivity.this, AusgabeActivity.class);
+            startActivity(ausgabe);
 
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            // Verbindung zu FAQ erstellen
+            Intent faq = new Intent (MainActivity.this, FAQActivity.class);
+            startActivity(faq);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
