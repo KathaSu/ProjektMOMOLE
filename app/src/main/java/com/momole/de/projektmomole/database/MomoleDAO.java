@@ -72,7 +72,7 @@ public class MomoleDAO {
         return null;
     }
 
-    public List<Momole> getAllMomoleAfter(long timestamp) {
+    public List<Momole> getAllMomoleAfter(long date) {
         open();
         Cursor cursor = database.query(TBL, //Table
                 new String[] {TBL_ID, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
@@ -91,14 +91,14 @@ public class MomoleDAO {
         }
         cursor.close();
         close();
-        return notizen;
+        return momole;
     }
 
-    public List<Notizen> getAllNotizen() {
+    public List<Momole> getAllMomole() {
         open();
 
-        Cursor cursor = database.query(TBL_N, //Table
-                new String[] {TBL_N_ID, TBL_N_TIME, TBL_N_DESCRIPTION}, //Fields, null would also return all columns / fields
+        Cursor cursor = database.query(TBL, //Table
+                new String[] {TBL_ID, TBL_DATE, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
                 null, //Selection (WHERE [field]=?)
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -106,73 +106,81 @@ public class MomoleDAO {
                 null, //Limit, limits the selection, e. g. 10 for 10 entries
                 null); //CancelationSignal
 
-        List<Notizen> notizen = new LinkedList<>();
+        List<Momole> momole = new LinkedList<>();
         if (cursor.moveToFirst()) { // read in the the result row by row, if data available
             while (!cursor.isAfterLast()) {
-                notizen.add(readFromCursor(cursor));
+                momole.add(readFromCursor(cursor));
                 cursor.moveToNext();
             }
         }
         cursor.close();
         close();
-        return notizen;
+        return momole;
     }
 
 
-    public long addNotizen(Notizen notizen) {
+    public long addMomole(Momole momole) {
         open();
-        long ret = database.insert(TBL_N, null, prepareValues(notizen));
+        long ret = database.insert(TBL, null, prepareValues(momole));
         if (ret > 0) {
-            notizen.setId(ret);
+            momole.setId(ret);
         }
         close();
         return ret;
     }
 
-    public int updateNotizen(Notizen notizen) {
+    public int updateMomole(Momole momole) {
         open();
-        int ret = database.update(TBL_N, //Table
-                prepareValues(notizen), //Values
-                TBL_N_ID + "=?", //Selection (what data to update)
-                new String[]{String.valueOf(notizen.getId())}); // selection by id
+        int ret = database.update(TBL, //Table
+                prepareValues(momole), //Values
+                TBL_ID + "=?", //Selection (what data to update)
+                new String[]{String.valueOf(momole.getId())}); // selection by id
         close();
         return ret;
     }
 
-    public int deleteNotizen(Notizen notizen) {
+    public int deleteMomole(Momole momole) {
         open();
-        int ret = database.delete(TBL_N,
-                TBL_N_ID + "=?", //Selection (what data to delete)
-                new String[]{String.valueOf(notizen.getId())}); // selection by id
+        int ret = database.delete(TBL,
+                TBL_ID + "=?", //Selection (what data to delete)
+                new String[]{String.valueOf(momole.getId())}); // selection by id
         close();
         return ret;
     }
 
-    private ContentValues prepareValues(Notizen notizen) {
+    private ContentValues prepareValues(Momole momole) {
         ContentValues contentValues = new ContentValues();
 
-        if (notizen.getId() > 0)
-            contentValues.put(TBL_N_ID, notizen.getId());
+        if (momole.getId() > 0)
+            contentValues.put(TBL_ID, momole.getId());
 
-        contentValues.put(TBL_N_DESCRIPTION, notizen.getDes());
-        contentValues.put(TBL_N_TIME, notizen.getTime());
+        contentValues.put(TBL_ALLERGYGROUP, momole.getallgr());
+        contentValues.put(TBL_COMPLAINT, momole.getcomp());
+        contentValues.put(TBL_FOOD, momole.getfood());
+        contentValues.put(TBL_DATE, momole.getDate());
 
         return contentValues;
     }
 
-    private Notizen readFromCursor(Cursor cursor) {
-        Notizen notizen = new Notizen();
+    private Momole readFromCursor(Cursor cursor) {
+        Momole momole = new Momole();
 
-        int index = cursor.getColumnIndex(TBL_N_ID);
-        notizen.setId(cursor.getLong(index));
+        int index = cursor.getColumnIndex(TBL_ID);
+        momole.setId(cursor.getLong(index));
 
-        index = cursor.getColumnIndex(TBL_N_TIME);
-        notizen.setTime(cursor.getLong(index));
+        index = cursor.getColumnIndex(TBL_DATE);
+        momole.setTime(cursor.getLong(index));
 
-        index = cursor.getColumnIndex(TBL_N_DESCRIPTION);
-        notizen.setDes(cursor.getString(index));
+        index = cursor.getColumnIndex(TBL_FOOD);
+        momole.setFood(cursor.getString(index));
 
-        return notizen;
+        index = cursor.getColumnIndex(TBL_COMPLAINT);
+        momole.setComp(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_ALLERGYGROUP);
+        momole.setAllgr(cursor.getString(index));
+
+        return momole;
     }
 
 
