@@ -33,6 +33,4 @@ public class DatabaseHelper {
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
         MomoleDAO.getInstance(null).onUpgrade(database, oldVersion, newVersion);
     }
-
-
 }
