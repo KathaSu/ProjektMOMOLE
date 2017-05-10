@@ -2,12 +2,13 @@ package com.momole.de.projektmomole.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by manji on 10.05.2017.
  */
 
-public class DatabaseHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "projektmomole.db";
     private static final int DATABASE_VERSION = 1;

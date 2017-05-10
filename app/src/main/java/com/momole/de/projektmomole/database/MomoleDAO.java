@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.momole.de.projektmomole.database.model.Momole;
+
 import java.util.LinkedList;
 
 /**
