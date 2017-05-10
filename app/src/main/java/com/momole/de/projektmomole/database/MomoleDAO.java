@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.momole.de.projektmomole.database.model.Momole;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by manji on 10.05.2017.
@@ -16,7 +17,7 @@ import java.util.LinkedList;
 
 public class MomoleDAO {
 
-    // columns of the Notizen table
+    // columns of the Momole table
     public static final String TBL = "Eingabe";
     public static final String TBL_ID = "id";
     public static final String TBL_DATE = "date";
@@ -24,7 +25,7 @@ public class MomoleDAO {
     public static final String TBL_COMPLAINT = "comp";
     public static final String TBL_ALLERGYGROUP = "allgr";
 
-    //sql statement of the notizen table
+    //sql statement of the Momole table
     public static final String CREATE_TBL = "CREATE TBL " + TBL + "("
             + TBL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TBL_DATE + " INTEGER NOT NULL, "
@@ -64,7 +65,7 @@ public class MomoleDAO {
 
     }
 
-    public MomoleDAO getmomole(long id) {
+    public Momole getmomole(long id) {
         open();
         Cursor cursor = database.query(TBL, //Table
                 null, //null returns all columns / fields
@@ -92,10 +93,10 @@ public class MomoleDAO {
                 null, //Having, Selection on Group By fields (HAVING [field]=1)
                 null, //Limit, limits the selection, e. g. 10 for 10 entries
                 TBL_DATE + " ASC"); //Order by timestamp, ascending
-        List<Momole> notizen = new LinkedList<>();
+        List<Momole> momole = new LinkedList<>();
         if (cursor.moveToFirst()) { // read in the the result row by row, if data available
             while (!cursor.isAfterLast()) {
-                notizen.add(readFromCursor(cursor));
+                momole.add(readFromCursor(cursor));
                 cursor.moveToNext();
             }
         }
@@ -127,7 +128,6 @@ public class MomoleDAO {
         close();
         return momole;
     }
-
 
     public long addMomole(Momole momole) {
         open();
@@ -164,9 +164,9 @@ public class MomoleDAO {
         if (momole.getId() > 0)
             contentValues.put(TBL_ID, momole.getId());
 
-        contentValues.put(TBL_ALLERGYGROUP, momole.getallgr());
-        contentValues.put(TBL_COMPLAINT, momole.getcomp());
-        contentValues.put(TBL_FOOD, momole.getfood());
+        contentValues.put(TBL_ALLERGYGROUP, momole.getAllgr());
+        contentValues.put(TBL_COMPLAINT, momole.getComp());
+        contentValues.put(TBL_FOOD, momole.getFood());
         contentValues.put(TBL_DATE, momole.getDate());
 
         return contentValues;
@@ -179,7 +179,7 @@ public class MomoleDAO {
         momole.setId(cursor.getLong(index));
 
         index = cursor.getColumnIndex(TBL_DATE);
-        momole.setTime(cursor.getLong(index));
+        momole.setDate(cursor.getLong(index));
 
         index = cursor.getColumnIndex(TBL_FOOD);
         momole.setFood(cursor.getString(index));
@@ -192,6 +192,4 @@ public class MomoleDAO {
 
         return momole;
     }
-
-
 }
