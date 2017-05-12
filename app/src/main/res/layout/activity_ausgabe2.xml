@@ -6,28 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.momole.de.projektmomole.AusgabeActivity">
 
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="349dp"
-        android:layout_height="152dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="95dp"
-        android:layout_height="68dp"
-        app:srcCompat="@android:drawable/ic_menu_agenda"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="221dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="95dp"
-        android:layout_height="68dp"
-        android:adjustViewBounds="false"
-        app:srcCompat="@android:drawable/ic_menu_crop"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="329dp" />
 
 </android.support.constraint.ConstraintLayout>
