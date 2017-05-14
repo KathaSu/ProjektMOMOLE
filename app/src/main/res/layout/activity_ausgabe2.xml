@@ -6,4 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.momole.de.projektmomole.AusgabeActivity">
 
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="349dp"
+        android:layout_height="155dp"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+
+
+
 </android.support.constraint.ConstraintLayout>
