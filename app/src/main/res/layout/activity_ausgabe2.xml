@@ -13,7 +13,21 @@
         tools:layout_editor_absoluteX="17dp"
         tools:layout_editor_absoluteY="16dp" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="87dp"
+        android:layout_height="70dp"
+        app:srcCompat="@android:drawable/ic_menu_agenda"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="220dp" />
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="86dp"
+        android:layout_height="70dp"
+        app:srcCompat="@android:drawable/ic_menu_crop"
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="328dp" />
 
 
 </android.support.constraint.ConstraintLayout>
