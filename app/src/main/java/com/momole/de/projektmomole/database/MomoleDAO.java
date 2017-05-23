@@ -21,6 +21,7 @@ public class MomoleDAO {
     public static final String TBL = "Eingabe";
     public static final String TBL_ID = "id";
     public static final String TBL_DATE = "date";
+    public static final String TBL_TIME = "time";
     public static final String TBL_FOOD = "foot";
     public static final String TBL_COMPLAINT = "comp";
     public static final String TBL_ALLERGYGROUP = "allgr";
@@ -29,6 +30,7 @@ public class MomoleDAO {
     public static final String CREATE_TBL = "CREATE TBL " + TBL + "("
             + TBL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TBL_DATE + " INTEGER NOT NULL, "
+            + TBL_TIME + " INTEGER NOT NULL, "
             + TBL_FOOD + " INTEGER NOT NULL, "
             + TBL_COMPLAINT + " INTEGER NOT NULL, "
             + TBL_ALLERGYGROUP + " TEXT "
@@ -86,7 +88,7 @@ public class MomoleDAO {
     public List<Momole> getAllMomoleAfter(long date1, long date2) {
         open();
         Cursor cursor = database.query(TBL, //Table
-                new String[] {TBL_ID, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
+                new String[] {TBL_ID, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
                 TBL_DATE + "<=" + date1 + "AND" + TBL_DATE + ">=" + date2,//Selection, can't do >= with selection arguments
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -109,7 +111,7 @@ public class MomoleDAO {
         open();
 
         Cursor cursor = database.query(TBL, //Table
-                new String[] {TBL_ID, TBL_DATE, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
+                new String[] {TBL_ID, TBL_DATE, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
                 null, //Selection (WHERE [field]=?)
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -167,6 +169,7 @@ public class MomoleDAO {
         contentValues.put(TBL_ALLERGYGROUP, momole.getAllgr());
         contentValues.put(TBL_COMPLAINT, momole.getComp());
         contentValues.put(TBL_FOOD, momole.getFood());
+        contentValues.put(TBL_TIME, momole.getTime());
         contentValues.put(TBL_DATE, momole.getDate());
 
         return contentValues;
@@ -180,6 +183,9 @@ public class MomoleDAO {
 
         index = cursor.getColumnIndex(TBL_DATE);
         momole.setDate(cursor.getLong(index));
+
+        index = cursor.getColumnIndex(TBL_TIME);
+        momole.setTime(cursor.getLong(index));
 
         index = cursor.getColumnIndex(TBL_FOOD);
         momole.setFood(cursor.getString(index));

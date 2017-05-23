@@ -8,6 +8,7 @@ public class Momole {
 
     private long id = -1;
     private long date;
+    private long time;
     private String food;
     private String comp;
     private String allgr;
@@ -21,6 +22,9 @@ public class Momole {
 
     public long getDate() { return date; }
     public void setDate(long date) { this.date = date; }
+
+    public long getTime() { return time; }
+    public void setTime(long time) { this.time = time; }
 
     public String getFood() {
         return food;
