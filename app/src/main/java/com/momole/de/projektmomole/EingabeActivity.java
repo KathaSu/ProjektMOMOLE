@@ -48,7 +48,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
 
         switch (v.getId()){
             
-            case R.id.button: {
+            case R.id.Uhrzeit: {
 
                 timePickerDialog = new TimePickerDialog(EingabeActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -70,7 +70,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
 
                 break;
             }
-            case R.id.button2: {
+            case R.id.Datum: {
 
                 datePickerDialog = new DatePickerDialog(EingabeActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
