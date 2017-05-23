@@ -81,26 +81,26 @@
             android:orientation="horizontal">
 
             <Button
-            android:id="@+id/button2"
+            android:id="@+id/Datum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Datum" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/Datumsausgabe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Datumsausgabe"/>
 
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/Uhrzeit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Uhrzeit" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/Zeitausgabe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Zeitausgabe"/>
@@ -114,7 +114,7 @@
 
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/Lebensmittel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button"
@@ -155,7 +155,7 @@
 
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/speichern"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Speichern" />
@@ -163,10 +163,6 @@
 
 
     </LinearLayout>
-
-
-
-
 
 </LinearLayout>
 
