@@ -83,18 +83,18 @@ public class MomoleDAO {
         return null;
     }
 
-    public List<Momole> getAllMomoleAfter(long date) {
+    public List<Momole> getAllMomoleAfter(long date1, long date2) {
         open();
         Cursor cursor = database.query(TBL, //Table
                 new String[] {TBL_ID, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
-                TBL_DATE + ">=" + date, //Selection, can't do >= with selection arguments
+                TBL_DATE + "<=" + date1 + "AND" + TBL_DATE + ">=" + date2,//Selection, can't do >= with selection arguments
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
                 null, //Having, Selection on Group By fields (HAVING [field]=1)
                 null, //Limit, limits the selection, e. g. 10 for 10 entries
                 TBL_DATE + " ASC"); //Order by timestamp, ascending
         List<Momole> momole = new LinkedList<>();
-        if (cursor.moveToFirst()) { // read in the the result row by row, if data available
+        if (cursor.moveToFirst()) { // read in the the resu1lt row by row, if data available
             while (!cursor.isAfterLast()) {
                 momole.add(readFromCursor(cursor));
                 cursor.moveToNext();
