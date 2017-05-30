@@ -7,14 +7,24 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.BaseAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
+
+import com.momole.de.projektmomole.database.MomoleDAO;
+import com.momole.de.projektmomole.database.model.Momole;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class AusgabeActivity extends AppCompatActivity implements OnClickListener {
+    private MomoleAdapter listAdapter;
+}
 
     //UI References
     private EditText fromDateEtxt;
@@ -78,7 +88,13 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         } else if(view == toDateEtxt) {
             toDatePickerDialog.show();
         }
+
     }
+     private class MomoleAdapter extends BaseAdapter {
 
+            private List<Momole> momole;
 
+            private MomoleAdapter() {
+                momole = MomoleDAO.getInstance(getContext()).getAllMomole();
+            }
 }
