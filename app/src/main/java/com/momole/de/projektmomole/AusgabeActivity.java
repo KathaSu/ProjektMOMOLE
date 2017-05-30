@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.widget.ListView;
 
 import com.momole.de.projektmomole.database.MomoleDAO;
 import com.momole.de.projektmomole.database.model.Momole;
@@ -23,9 +24,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class AusgabeActivity extends AppCompatActivity implements OnClickListener {
+    private ListView listview;
     private MomoleAdapter listAdapter;
 }
-
     //UI References
     private EditText fromDateEtxt;
     private EditText toDateEtxt;
@@ -90,11 +91,3 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         }
 
     }
-     private class MomoleAdapter extends BaseAdapter {
-
-            private List<Momole> momole;
-
-            private MomoleAdapter() {
-                momole = MomoleDAO.getInstance(getContext()).getAllMomole();
-            }
-}
