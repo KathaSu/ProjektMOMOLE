@@ -30,14 +30,14 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
 
-        btnTime = (Button) findViewById(R.id.button);
+        btnTime = (Button) findViewById(R.id.Uhrzeit);
         btnTime.setOnClickListener(this);
-        btnDate = (Button) findViewById(R.id.button2);
+        btnDate = (Button) findViewById(R.id.Datum);
         btnDate.setOnClickListener(this);
 
 
-        tvTime = (TextView) findViewById(R.id.textView3);
-        tvDate = (TextView) findViewById(R.id.textView5);
+        tvTime = (TextView) findViewById(R.id.Zeitausgabe);
+        tvDate = (TextView) findViewById(R.id.Datumsausgabe);
 
     }
 
@@ -48,7 +48,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
 
         switch (v.getId()){
             
-            case R.id.button: {
+            case R.id.Uhrzeit: {
 
                 timePickerDialog = new TimePickerDialog(EingabeActivity.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
@@ -70,7 +70,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
 
                 break;
             }
-            case R.id.button2: {
+            case R.id.Datum: {
 
                 datePickerDialog = new DatePickerDialog(EingabeActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
