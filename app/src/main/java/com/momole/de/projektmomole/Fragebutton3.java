@@ -8,6 +8,6 @@ public class Fragebutton3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragebutton4);
+        setContentView(R.layout.activity_fragebutton3);
     }
 }

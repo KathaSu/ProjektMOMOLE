@@ -24,23 +24,23 @@ public class FAQActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void goTofrage7 (View view){
-        Intent intent = new Intent (this, Fragebutton3.class);
+        Intent intent = new Intent (this, Fragebutton7.class);
         startActivity(intent);
     }
     public void goTofrage3 (View view){
-        Intent intent = new Intent (this, Fragebutton4.class);
+        Intent intent = new Intent (this, Fragebutton3.class);
         startActivity(intent);
     }
     public void goTofrage4 (View view){
-        Intent intent = new Intent (this, Fragebutton5.class);
+        Intent intent = new Intent (this, Fragebutton4.class);
         startActivity(intent);
     }
     public void goTofrage5 (View view){
-        Intent intent = new Intent (this, Fragebutton6.class);
+        Intent intent = new Intent (this, Fragebutton5.class);
         startActivity(intent);
     }
     public void goTofrage6 (View view){
-        Intent intent = new Intent (this, Fragebutton7.class);
+        Intent intent = new Intent (this, Fragebutton6.class);
         startActivity(intent);
     }
 

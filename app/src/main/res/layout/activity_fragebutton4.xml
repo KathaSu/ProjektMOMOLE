@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+tools:context="com.momole.de.projektmomole.Fragebutton4" >
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.momole.de.projektmomole.Fragebutton3">
+    android:layout_height="match_parent" >
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="368dp"
+        android:layout_height="560dp"
+        android:text="Welche Lebensmittel und Beschwerden lassen sich dokumentieren? \n \n \nIn dieser App lassen sich alle Lebensmittel, sowie Gerichte in einem Freitextfeld dokumentieren. Bei den Beschwerden verhält es sich ebenso. Bitte geben Sie konsumierte Lebensmittel und Beschwerden möglichst präzise an. Zusätzlich lassen sich den Nahrungsmitteln Allergene zuweisen, die häufig zu Unverträglichkeiten führen."
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="-6dp" />
 
 </android.support.constraint.ConstraintLayout>
+</ScrollView>
