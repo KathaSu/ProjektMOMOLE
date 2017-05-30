@@ -5,8 +5,10 @@ import android.app.DatePickerDialog.OnDateSetListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.momole.de.projektmomole.database.MomoleDAO;
 import com.momole.de.projektmomole.database.model.Momole;
@@ -22,6 +25,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+
+import static java.security.AccessController.getContext;
 
 public class AusgabeActivity extends AppCompatActivity implements OnClickListener {
 
