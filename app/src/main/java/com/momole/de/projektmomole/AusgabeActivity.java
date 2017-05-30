@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.momole.de.projektmomole.database.MomoleDAO;
 import com.momole.de.projektmomole.database.model.Momole;
@@ -95,6 +98,6 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
             private List<Momole> momole;
 
             private MomoleAdapter() {
-                momole = MomoleDAO.getInstance(getContext()).getAllMomole();
+                momole = MomoleDAO.getInstance().getAllMomole();
             }
 }
