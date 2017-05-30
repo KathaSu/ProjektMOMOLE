@@ -97,11 +97,11 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         }
     }
 
-    private class MomoleAdapter extends BaseAdapter {private List<Momole> momole;
+    private class MomoleAdapter extends BaseAdapter {
+        private List<Momole> momole;
 
         private MomoleAdapter() {
             momole = MomoleDAO.getInstance(getContext()).getAllMomole();
         }
-    }
     }
 }
