@@ -90,6 +90,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         }
 
     }
+    //Extraklasse enstanden muss eingebunden werden
      private class MomoleAdapter extends BaseAdapter {
 
             private List<Momole> momole;
