@@ -32,7 +32,6 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
     private ListView listview;
     private MomoleAdapter listAdapter;
-    }
 
     //UI References
     private EditText fromDateEtxt;
@@ -96,13 +95,13 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         } else if (view == toDateEtxt) {
             toDatePickerDialog.show();
         }
-        private class MomoleAdapter extends BaseAdapter {
+    }
 
-            private List<Momole> momole;
+    private class MomoleAdapter extends BaseAdapter {private List<Momole> momole;
 
-            private MomoleAdapter() {
-                momole = MomoleDAO.getInstance(getContext()).getAllMomole();
-            }
+        private MomoleAdapter() {
+            momole = MomoleDAO.getInstance(getContext()).getAllMomole();
         }
+    }
     }
 }
