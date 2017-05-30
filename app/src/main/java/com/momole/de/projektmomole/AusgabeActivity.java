@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.widget.ListView;
 
 import com.momole.de.projektmomole.database.MomoleDAO;
 import com.momole.de.projektmomole.database.model.Momole;
@@ -23,8 +24,10 @@ import java.util.List;
 import java.util.Locale;
 
 public class AusgabeActivity extends AppCompatActivity implements OnClickListener {
+
+    private ListView listview;
     private MomoleAdapter listAdapter;
-}
+    }
 
     //UI References
     private EditText fromDateEtxt;
@@ -83,19 +86,18 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
     @Override
     public void onClick(View view) {
-        if(view == fromDateEtxt) {
+        if (view == fromDateEtxt) {
             fromDatePickerDialog.show();
-        } else if(view == toDateEtxt) {
+        } else if (view == toDateEtxt) {
             toDatePickerDialog.show();
         }
-
-    }
-    //Extraklasse enstanden muss eingebunden werden
-     private class MomoleAdapter extends BaseAdapter {
+        private class MomoleAdapter extends BaseAdapter {
 
             private List<Momole> momole;
 
             private MomoleAdapter() {
                 momole = MomoleDAO.getInstance(getContext()).getAllMomole();
             }
+        }
+    }
 }
