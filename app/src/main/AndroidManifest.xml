@@ -20,8 +20,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".EingabeActivity" />
+        <activity android:name=".FAQActivity" />
         <activity android:name=".AusgabeActivity" />
-        <activity android:name=".FAQActivity"></activity>
+        <activity android:name=".Fragebutton2$Fragebutton" />
+        <activity android:name=".Fragebutton2" />
+        <activity android:name=".Fragebutton" />
+        <activity android:name=".Fragebutton3" />
+        <activity android:name=".Fragebutton4" />
+        <activity android:name=".Fragebutton5" />
+        <activity android:name=".Fragebutton6" />
+        <activity android:name=".Fragebutton7"></activity>
     </application>
 
 </manifest>
