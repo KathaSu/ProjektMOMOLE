@@ -14,8 +14,21 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-public class EingabeActivity extends AppCompatActivity implements View.OnClickListener {
+public class EingabeActivity extends AppCompatActivity {
 
+    Button button3;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_eingabe2);
+        button3 = (Button) findViewById(R.id.button3);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+    }
 /*
     Button btnTime, btnDate;
     TextView tvTime, tvDate;
@@ -91,11 +104,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
     */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eingabe2);
-            }
+
 
         findViewById(R.id.button3Button).setOnClickListener(new View.OnClickListener() {
             @Override
