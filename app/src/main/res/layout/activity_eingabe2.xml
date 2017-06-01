@@ -33,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ood"
+            android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -67,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ctivity"
-            android:textAlignment="viewStart"
+            android:gravity="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -142,11 +143,7 @@
             android:maxHeight="300dp"
             android:text="Beschwerden" />
 
-
-
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -159,17 +156,6 @@
             android:layout_height="wrap_content"
             android:text="Speichern" />
 
-
-
     </LinearLayout>
 
-
-
-
-
 </LinearLayout>
-
-
-
-
-
