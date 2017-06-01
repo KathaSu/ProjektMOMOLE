@@ -16,18 +16,42 @@ import android.widget.TimePicker;
 
 public class EingabeActivity extends AppCompatActivity {
 
-    Button button3;
+    Button b_save;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
-        button3 = (Button) findViewById(R.id.button3);
+        b_save = (Button) findViewById(R.id.button3);
 
-        button3.setOnClickListener(new View.OnClickListener() {
+        b_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
         });
+    }
+
+    findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
+            String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
+            try {
+                Momole momole = new Momole();
+                momole.setFood(food);
+                momole.setComp(comp);
+                momole.setTime(System.currentTimeMillis());
+                MomoleDAO.getInstance(EActivity.this).addMomole(momole);
+                Toast.makeText(EActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
+                finish();
+            } catch (NumberFormatException e) {
+                Toast.makeText(EActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
+            }
+        } else {
+
+            Toast.makeText(EActivity.this,
+                    R.string.amount_missing, Toast.LENGTH_LONG).show();
+        }
     }
 /*
     Button btnTime, btnDate;
@@ -104,36 +128,5 @@ public class EingabeActivity extends AppCompatActivity {
         }
     }
     */
-
-
-        findViewById(R.id.button3Button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
-                String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
-                try {
-                    Momole momole = new Momole();
-                    momole.setFood(food);
-                    momole.setComp(comp);
-                    momole.setTime(System.currentTimeMillis());
-                    MomoleDAO.getInstance(EActivity.this).addMomole(momole);
-                    Toast.makeText(EActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
-                    finish();
-                } catch (NumberFormatException e) {
-                    Toast.makeText(EActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
-                }
-            } else {
-
-                Toast.makeText(EActivity.this,
-                        R.string.amount_missing, Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-        );
-}
-
-
-
-
 }
 
