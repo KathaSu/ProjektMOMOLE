@@ -22,7 +22,7 @@ public class EingabeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
-        b_save = (Button) findViewById(R.id.button3);
+        b_save = (Button) findViewById(R.id.b_save);
 
         b_save.setOnClickListener(new View.OnClickListener() {
             @Override
