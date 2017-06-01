@@ -91,7 +91,6 @@
                 android:layout_height="wrap_content"
                 android:text="Datumsausgabe"/>
 
-
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
@@ -104,13 +103,11 @@
                 android:layout_height="wrap_content"
                 android:text="Zeitausgabe"/>
 
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <EditText
                 android:id="@+id/editText"
@@ -122,15 +119,11 @@
                 android:maxHeight="300dp"
                 android:text="Lebensmittel" />
 
-
-
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <EditText
                 android:id="@+id/Beschwerden"
@@ -142,24 +135,17 @@
                 android:maxHeight="300dp"
                 android:text="Beschwerden" />
 
-
-
-
         </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Speichern" />
-
-
 
         </LinearLayout>
 
