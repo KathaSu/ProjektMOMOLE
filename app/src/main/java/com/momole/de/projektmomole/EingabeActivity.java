@@ -30,7 +30,6 @@ public class EingabeActivity extends AppCompatActivity {
             }
         });
     }
-
     findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -40,19 +39,11 @@ public class EingabeActivity extends AppCompatActivity {
                 Momole momole = new Momole();
                 momole.setFood(food);
                 momole.setComp(comp);
+                momole.setDate(date);
                 momole.setTime(System.currentTimeMillis());
                 MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                Toast.makeText(EingabeActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
-                finish();
-            } catch (NumberFormatException e) {
-                Toast.makeText(EingabeActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
             }
-        } else {
 
-            Toast.makeText(EActivity.this,
-                    R.string.amount_missing, Toast.LENGTH_LONG).show();
-        }
-    }
 /*
     Button btnTime, btnDate;
     TextView tvTime, tvDate;
