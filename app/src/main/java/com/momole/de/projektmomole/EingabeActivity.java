@@ -15,8 +15,7 @@ import android.widget.TimePicker;
 
 public class EingabeActivity extends AppCompatActivity implements View.OnClickListener {
 
-
-
+/*
     Button btnTime, btnDate;
     TextView tvTime, tvDate;
 
@@ -35,10 +34,8 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
         btnDate = (Button) findViewById(R.id.button2);
         btnDate.setOnClickListener(this);
 
-
         tvTime = (TextView) findViewById(R.id.textView3);
         tvDate = (TextView) findViewById(R.id.textView5);
-
     }
 
     @Override
@@ -90,67 +87,68 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
                 datePickerDialog.show();
                 break;
             }
-
         }
     }
-}
-{
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
+    */
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
 
         findViewById(R.id.paymentCancelButton).setOnClickListener(new View.OnClickListener() {
-@Override
-public void onClick(View v) {
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-@Override
-public void onClick(DialogInterface dialog, int which) {
-        switch (which){
-        case DialogInterface.BUTTON_POSITIVE:
-        finish();
-        break;
+            @Override
+            public void onClick(View v) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which){
+                            case DialogInterface.BUTTON_POSITIVE:
+                                finish();
+                                break;
 
-        case DialogInterface.BUTTON_NEGATIVE:
-        //do nothing, stay on page
-        break;
-        }
-        }
-        };
+                            case DialogInterface.BUTTON_NEGATIVE:
+                                //do nothing, stay on page
+                                break;
+                        }
+                    }
+                };
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(EActivity.this);
-        builder.setMessage(R.string.confirm_question);
-        builder.setPositiveButton(R.string.yes, dialogClickListener);
-        builder.setNegativeButton(R.string.no, dialogClickListener);
-        builder.show();
-        }
+                AlertDialog.Builder builder = new AlertDialog.Builder(EActivity.this);
+                builder.setMessage(R.string.confirm_question);
+                builder.setPositiveButton(R.string.yes, dialogClickListener);
+                builder.setNegativeButton(R.string.no, dialogClickListener);
+                builder.show();
+            }
         });
 
         findViewById(R.id.paymentSaveButton).setOnClickListener(new View.OnClickListener() {
-@Override
-public void onClick(View v) {
-        String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
-        String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
-        try {
-        Momole momole = new Momole();
-        momole.setFood(food);
-        momole.setComp(comp);
-        momole.setTime(System.currentTimeMillis());
-        MomoleDAO.getInstance(EActivity.this).addMomole(momole);
-        Toast.makeText(EActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
-        finish();
-        } catch (NumberFormatException e) {
-        Toast.makeText(EActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
-        }
-        } else {
+            @Override
+            public void onClick(View v) {
+                String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
+                String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
+                try {
+                    Momole momole = new Momole();
+                    momole.setFood(food);
+                    momole.setComp(comp);
+                    momole.setTime(System.currentTimeMillis());
+                    MomoleDAO.getInstance(EActivity.this).addMomole(momole);
+                    Toast.makeText(EActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
+                    finish();
+                } catch (NumberFormatException e) {
+                    Toast.makeText(EActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
+                }
+            } else {
 
-        Toast.makeText(EActivity.this,
-        R.string.amount_missing, Toast.LENGTH_LONG).show();
+                Toast.makeText(EActivity.this,
+                        R.string.amount_missing, Toast.LENGTH_LONG).show();
+            }
         }
-        }
-        }
+    }
         );
-        }
-        }
-        }
+}
+
+
+
+
+}
+
