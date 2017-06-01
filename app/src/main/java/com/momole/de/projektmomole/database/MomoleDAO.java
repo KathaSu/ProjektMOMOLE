@@ -27,13 +27,13 @@ public class MomoleDAO {
     public static final String TBL_ALLERGYGROUP = "allgr";
 
     //sql statement of the Momole table
-    public static final String CREATE_TBL = "CREATE TBL " + TBL + "("
-            + TBL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TBL_DATE + " INTEGER NOT NULL, "
-            + TBL_TIME + " INTEGER NOT NULL, "
-            + TBL_FOOD + " INTEGER NOT NULL, "
-            + TBL_COMPLAINT + " INTEGER NOT NULL, "
-            + TBL_ALLERGYGROUP + " TEXT "
+    public static final String CREATE_TBL = "CREATE TBL" + TBL + "("
+            + TBL_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + TBL_DATE + "INTEGER NOT NULL,"
+            + TBL_TIME + "INTEGER NOT NULL,"
+            + TBL_FOOD + "INTEGER NOT NULL,"
+            + TBL_COMPLAINT + "INTEGER NOT NULL,"
+            + TBL_ALLERGYGROUP + "TEXT"
             + ");";
 
     private static MomoleDAO instance;
