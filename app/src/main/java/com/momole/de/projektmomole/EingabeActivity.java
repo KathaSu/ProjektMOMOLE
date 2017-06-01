@@ -41,11 +41,11 @@ public class EingabeActivity extends AppCompatActivity {
                 momole.setFood(food);
                 momole.setComp(comp);
                 momole.setTime(System.currentTimeMillis());
-                MomoleDAO.getInstance(EActivity.this).addMomole(momole);
-                Toast.makeText(EActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
+                MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
+                Toast.makeText(EingabeActivity.this, R.string.save_momole_message, Toast.LENGTH_SHORT).show();
                 finish();
             } catch (NumberFormatException e) {
-                Toast.makeText(EActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
+                Toast.makeText(EingabeActivity.this, R.string.amount_missing, Toast.LENGTH_LONG).show();
             }
         } else {
 
