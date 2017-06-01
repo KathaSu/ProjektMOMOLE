@@ -25,7 +25,7 @@
                 android:layout_weight="0.02"
                 android:onClick="playStuff"
                 android:scaleType="fitXY"
-                app:srcCompat="@mipmap/images" />
+                /*app:srcCompat="@mipmap/images"*/ />
 
             <TextView
                 android:id="@+id/textView2"
@@ -43,7 +43,7 @@
                 android:layout_height="70dp"
                 android:onClick="playStuff"
                 android:scaleType="fitXY"
-                app:srcCompat="@mipmap/c" />
+                /*app:srcCompat="@mipmap/c"*/ />
 
             <TextView
                 android:id="@+id/textView7"
@@ -60,7 +60,7 @@
                 android:layout_height="70dp"
                 android:onClick="playStuff"
                 android:scaleType="fitXY"
-                app:srcCompat="@mipmap/a" />
+                /*app:srcCompat="@mipmap/a"*/ />
 
             <TextView
                 android:id="@+id/textView4"
