@@ -5,10 +5,12 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.icu.text.DateFormat;
 import android.icu.util.Calendar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.format.DateUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
@@ -38,16 +40,27 @@ public class EingabeActivity extends Activity {
 
     LinearLayout ll;
     TextView tv;
-    Button b;
+    Button btn;
     /*Button b_save;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ll=new LinearLayout(this);
+        ll = new LinearLayout(this);
+        tv = new TextView(this);
+        btn = new Button(this);
 
+        ActionBar.LayoutParams dimensions=new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        ll.setLayoutParams(dimensions);
+
+        ActionBar.LayoutParams viewDimensions=new ActionBar.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, android.app.ActionBar.LayoutParams.WRAP_CONTENT);
+        tv.setLayoutParams(viewDimensions);
+        btn.setLayoutParams(viewDimensions);
         setContentView(R.layout.activity_eingabe2);
+    }
+}
+     /*
 
         setContentView(R.layout.activity_eingabe2);
         findViewById(R.id.b_save).setOnClickListener(new View.OnClickListener() {
