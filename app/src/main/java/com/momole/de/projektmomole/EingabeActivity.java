@@ -34,6 +34,7 @@ public class EingabeActivity extends AppCompatActivity {
             }
         });
     }
+    /*
     findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
