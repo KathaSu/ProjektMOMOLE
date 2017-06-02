@@ -11,6 +11,7 @@ import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.preference.PreferenceManager;
@@ -33,9 +34,12 @@ import com.momole.de.projektmomole.Database.DatabaseHelper;
 
 
 
-public class EingabeActivity extends AppCompatActivity {
+public class EingabeActivity extends Activity {
 
-    Button b_save;
+    LinearLayout ll;
+    TextView tv;
+    Button b;
+    /*Button b_save;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +57,7 @@ public class EingabeActivity extends AppCompatActivity {
                                                                  momole.setComp(besch);
                                                                  momole.setTime(System.currentTimeMillis());
                                                                  MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                                                                 Toast.makeText(EingabeActivity.this, R.Speichern_message, Toast.LENGTH_SHORT).
+                                                                 Toast.makeText(EingabeActivity.this, T.set.Speichern_message, Toast.LENGTH_SHORT).
                                                                  show();
                                                                  finish();
                                                              }
