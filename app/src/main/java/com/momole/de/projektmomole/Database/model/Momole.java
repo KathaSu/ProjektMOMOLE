@@ -1,0 +1,43 @@
+package com.momole.de.projektmomole.Database.model;
+
+/**
+ * Created by manji on 02.06.2017.
+ */
+
+public class Momole {
+
+    private long id = -1;
+    private long date;
+    private long time;
+    private String food;
+    private String comp;
+    private String allgr;
+
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getDate() { return date; }
+    public void setDate(long date) { this.date = date; }
+
+    public long getTime() { return time; }
+    public void setTime(long time) { this.time = time; }
+
+    public String getFood() {
+        return food;
+    }
+    public void setFood(String food) { this.food = food; }
+
+    public String getComp() {
+        return comp;
+    }
+    public void setComp(String comp) { this.comp = comp; }
+
+    public String getAllgr() {
+        return allgr;
+    }
+    public void setAllgr(String allgr) { this.allgr = allgr; }
+}
