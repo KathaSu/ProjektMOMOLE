@@ -127,10 +127,4 @@ public class EingabeActivity extends AppCompatActivity {
                                 }, calender.get(Calendar.YEAR), calender.get(Calendar.MONTH), calender.get(Calendar.DAY_OF_MONTH));
 
                                 datePickerDialog.show();
-                                break;
-                }
-                }
-                }
-                }
-           }
-                }
+                                break;*/
