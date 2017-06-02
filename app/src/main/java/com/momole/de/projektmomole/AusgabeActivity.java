@@ -121,7 +121,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         public List<Momole> momole;
 
         public MomoleAdapter() {
-            momole = MomoleDAO.getInstance(getContext().getAllMomoleAfter());
+            momole = MomoleDAO.getInstance(getContext().getAllMomoleAfter(fromDateEtxt, toDateEtxt));
         }
 
 
@@ -142,10 +142,11 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            if (convertView == null)
+            if (convertView == null) {
+                LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = layoutInflater.inflate(R.layout.row_ausgabe, null);
+            }
 
             TextView date = (TextView) convertView.findViewById(R.id.rowMOMOLEdate);
             TextView time = (TextView) convertView.findViewById(R.id.rowMOMOLEtime);
