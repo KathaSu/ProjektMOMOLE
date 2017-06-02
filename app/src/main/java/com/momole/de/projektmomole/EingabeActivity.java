@@ -32,6 +32,19 @@ public class EingabeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_eingabe2);
+        findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
+                                                               @Override
+                                                               public void onClick (View v){
+                                                                   String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
+                                                                   String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
+                                                                   try {
+                                                                       Momole momole = new Momole();
+                                                                       momole.setFood(food);
+                                                                       momole.setComp(comp);
+                                                                       momole.setDate(date);
+                                                                       momole.setTime(System.currentTimeMillis());
+                                                                       MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
+                                                                   }
         b_save = (Button) findViewById(R.id.b_save);
 
         b_save.setOnClickListener(new View.OnClickListener() {
@@ -43,21 +56,6 @@ public class EingabeActivity extends AppCompatActivity {
     }
 
 /*
-    findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick (View v){
-                    String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
-                    String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
-                    try {
-                        Momole momole = new Momole();
-                        momole.setFood(food);
-                        momole.setComp(comp);
-                        momole.setDate(date);
-                        momole.setTime(System.currentTimeMillis());
-                        MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                    }
-
-
                     Button btnTime, btnDate;
                     TextView tvTime, tvDate;
 
