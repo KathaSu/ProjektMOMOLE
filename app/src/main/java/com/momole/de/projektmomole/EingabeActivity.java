@@ -45,6 +45,10 @@ public class EingabeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ll=new LinearLayout(this);
+
+        setContentView(R.layout.activity_eingabe2);
+
         setContentView(R.layout.activity_eingabe2);
         findViewById(R.id.b_save).setOnClickListener(new View.OnClickListener() {
                                                          @Override
