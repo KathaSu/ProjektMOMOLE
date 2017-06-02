@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.momole.de.projektmomole.database.model.Momole;
 
+import java.security.AccessControlContext;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class MomoleDAO {
     private DatabaseHelper dbHelper;
     private SQLiteDatabase database;
 
-    public static MomoleDAO getInstance(Context context){
+    public static MomoleDAO getInstance(AccessControlContext context){
         if (instance == null){
             instance = new MomoleDAO(context);
         }
