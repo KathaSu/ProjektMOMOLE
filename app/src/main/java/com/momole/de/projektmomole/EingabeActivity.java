@@ -36,8 +36,6 @@ import com.momole.de.projektmomole.Database.DatabaseHelper;
 
 public class EingabeActivity extends Activity {
 
-    Button b_save;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,17 +52,15 @@ public class EingabeActivity extends Activity {
                         momole.setFood(leb);
                         momole.setTime(System.currentTimeMillis());
                         MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                        Toast.makeText(EingabeActivity.this, R.id.speichern_message, Toast.LENGTH_SHORT).show();
+                        /*Toast.makeText(EingabeActivity.this, R.id.Speichern, Toast.LENGTH_SHORT).show();*/
                         finish();
                     } catch (NumberFormatException e) {
-                        Toast.makeText(EingabeActivity.this, R.string.beschwerden_missing, Toast.LENGTH_LONG).show();
-                    }
-            else{
-
+                       /* Toast.makeText(EingabeActivity.this, R.string.beschwerden, Toast.LENGTH_LONG).show();*/
+                    }/*else{
                         Toast.makeText(EingabeActivity.this,
-                                R.string.beschwerden_missing, Toast.LENGTH_LONG).show();
+                                R.string.beschwerden, Toast.LENGTH_LONG).show();
 
-                    }
+                    }*/
                 }
             }
         });
