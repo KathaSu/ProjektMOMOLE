@@ -17,6 +17,16 @@ import android.preference.PreferenceManager;
 import android.content.Intent;
 import android.widget.Toast;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
 import com.momole.de.projektmomole.Database.model.Momole;
 import com.momole.de.projektmomole.Database.MomoleDAO;
 import com.momole.de.projektmomole.Database.DatabaseHelper;
@@ -32,28 +42,29 @@ public class EingabeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_eingabe2);
-        findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
-                                                               @Override
-                                                               public void onClick (View v){
-                                                                   String food = ((TextView) findViewById(R.id.momoleInputfood)).getText().toString();
-                                                                   String comp = ((TextView) findViewById(R.id.momoleInputcomp)).getText().toString();
-                                                                   try {
-                                                                       Momole momole = new Momole();
-                                                                       momole.setFood(food);
-                                                                       momole.setComp(comp);
-                                                                       momole.setDate(date);
-                                                                       momole.setTime(System.currentTimeMillis());
-                                                                       MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                                                                   }
-        b_save = (Button) findViewById(R.id.b_save);
-
-        b_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-        }
+        findViewById(R.id.b_save).setOnClickListener(new View.OnClickListener() {
+                                                         @Override
+                                                         public void onClick(View view) {
+                                                             String leb = ((TextView) findViewById(R.id.Lebensmittel)).getText().toString();
+                                                             String besch = ((TextView) findViewById(R.id.Beschwerden)).getText().toString();
+                                                             try {
+                                                                 Momole momole = new Momole();
+                                                                 momole.setFood(leb);
+                                                                 momole.setComp(besch);
+                                                                 momole.setTime(System.currentTimeMillis());
+                                                                 MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
+                                                                 Toast.makeText(EingabeActivity.this, R..Speichern_message, Toast.LENGTH_SHORT).
+                                                                 show();
+                                                                 finish();
+                                                             }
+                                                         }
+                                                     }
     }
+}
+
+
+
+
 
 /*
                     Button btnTime, btnDate;
