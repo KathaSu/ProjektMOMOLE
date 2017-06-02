@@ -37,14 +37,11 @@ public class EingabeActivity extends AppCompatActivity {
         b_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!PreferenceManager.getDefaultSharedPreferences(EingabeActivity.this).getBoolean("lock_payment", false)) {
-                    Intent intent = new Intent(EingabeActivity.this, EingabeActivity.class);
-                    startActivity(intent);
-                else {
-                        Toast.makeText(EingabeActivity.this, R.string.momole_locked, Toast.LENGTH_LONG).show();
-                    }
             }
         });
+        }
+    }
+
 /*
     findViewById(R.id.b_saveButton).setOnClickListener(new View.OnClickListener() {
                 @Override
