@@ -53,7 +53,7 @@ public class EingabeActivity extends AppCompatActivity {
                                                                  momole.setComp(besch);
                                                                  momole.setTime(System.currentTimeMillis());
                                                                  MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                                                                 Toast.makeText(EingabeActivity.this, R..Speichern_message, Toast.LENGTH_SHORT).
+                                                                 Toast.makeText(EingabeActivity.this, R.Speichern_message, Toast.LENGTH_SHORT).
                                                                  show();
                                                                  finish();
                                                              }
