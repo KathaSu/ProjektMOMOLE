@@ -1,5 +1,9 @@
 package com.momole.de.projektmomole.Database;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 /**
  * Created by manji on 02.06.2017.
  */
