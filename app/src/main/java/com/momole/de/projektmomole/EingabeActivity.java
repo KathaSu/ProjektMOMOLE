@@ -34,54 +34,35 @@ import com.momole.de.projektmomole.Database.model.Momole;
 import com.momole.de.projektmomole.Database.MomoleDAO;
 import com.momole.de.projektmomole.Database.DatabaseHelper;
 
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 
 public class EingabeActivity extends Activity {
 
-    LinearLayout ll;
-    TextView tv;
-    Button btn;
-    /*Button b_save;*/
+    Button b_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        ll = new LinearLayout(this);
-        tv = new TextView(this);
-        btn = new Button(this);
-
-        ActionBar.LayoutParams dimensions=new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        ll.setLayoutParams(dimensions);
-
-        ActionBar.LayoutParams viewDimensions=new ActionBar.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, android.app.ActionBar.LayoutParams.WRAP_CONTENT);
-        tv.setLayoutParams(viewDimensions);
-        btn.setLayoutParams(viewDimensions);
-        setContentView(R.layout.activity_eingabe2);
-    }
-}
-     /*
-
         setContentView(R.layout.activity_eingabe2);
         findViewById(R.id.b_save).setOnClickListener(new View.OnClickListener() {
-                                                         @Override
-                                                         public void onClick(View view) {
-                                                             String leb = ((TextView) findViewById(R.id.Lebensmittel)).getText().toString();
-                                                             String besch = ((TextView) findViewById(R.id.Beschwerden)).getText().toString();
-                                                             try {
-                                                                 Momole momole = new Momole();
-                                                                 momole.setFood(leb);
-                                                                 momole.setComp(besch);
-                                                                 momole.setTime(System.currentTimeMillis());
-                                                                 MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                                                                 Toast.makeText(EingabeActivity.this, T.set.Speichern_message, Toast.LENGTH_SHORT).
-                                                                 show();
-                                                                 finish();
-                                                             }
-                                                         }
-                                                     }
+            @Override
+            public void onClick(View view) {
+                String leb = ((TextView) findViewById(R.id.Lebensmittel)).getText().toString();
+                String besch = ((TextView) findViewById(R.id.Beschwerden)).getText().toString();
+                try {
+                    Momole momole = new Momole();
+                    momole.setFood(leb);
+                    momole.setComp(besch);
+                    momole.setTime(System.currentTimeMillis());
+                    MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
+                    finish();
+                }
+            }
+        }
     }
 }
+
 
 
 
