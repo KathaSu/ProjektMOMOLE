@@ -85,7 +85,7 @@ public class MomoleDAO {
         return null;
     }
 
-    public List<Momole> getAllMomoleAfter(long date1, long date2) {
+    public List<Momole> getAllMomoleBetween(String date1, String date2) {
         open();
         Cursor cursor = database.query(TBL, //Table
                 new String[] {TBL_ID, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields

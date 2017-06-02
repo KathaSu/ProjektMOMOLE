@@ -26,6 +26,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import static java.security.AccessController.getContext;
+
 public class AusgabeActivity extends AppCompatActivity implements OnClickListener {
 
     //UI References
@@ -121,7 +123,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         public List<Momole> momole;
 
         public MomoleAdapter() {
-            momole = MomoleDAO.getInstance(getContext().getAllMomoleAfter(fromDateEtxt, toDateEtxt));
+            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(String.valueOf(fromDateEtxt), String.valueOf(toDateEtxt));
         }
 
 
@@ -144,7 +146,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if (convertView == null) {
-                LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 convertView = layoutInflater.inflate(R.layout.row_ausgabe, null);
             }
 
@@ -167,7 +169,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
         @Override
         public void notifyDataSetChanged() {
-            momole = MomoleDAO.getInstance(getContext()).getAllPaymentsAfter();
+            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(String.valueOf(fromDateEtxt), String.valueOf(toDateEtxt));
             super.notifyDataSetChanged();
         }
     }
