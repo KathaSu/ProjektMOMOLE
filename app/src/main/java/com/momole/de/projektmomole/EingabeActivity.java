@@ -18,6 +18,8 @@ import android.content.Intent;
 import android.widget.Toast;
 
 import com.momole.de.projektmomole.Database.model.Momole;
+import com.momole.de.projektmomole.Database.MomoleDAO;
+import com.momole.de.projektmomole.Database.DatabaseHelper;
 
 
 
