@@ -54,15 +54,6 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         setDateTimeField();
     }
 
-    private void findViewsById() {
-        fromDateEtxt = (EditText) findViewById(R.id.etxt_fromdate);
-        fromDateEtxt.setInputType(InputType.TYPE_NULL);
-        fromDateEtxt.requestFocus();
-
-        toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
-        toDateEtxt.setInputType(InputType.TYPE_NULL);
-    }
-
     private void setDateTimeField() {
         fromDateEtxt.setOnClickListener(this);
         toDateEtxt.setOnClickListener(this);
@@ -96,13 +87,56 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         } else if (view == toDateEtxt) {
             toDatePickerDialog.show();
         }
-        private class MomoleAdapter extends BaseAdapter {
 
+        private void findViewsById() {
+
+
+
+        private class MomoleAdapter extends BaseAdapter {
             private List<Momole> momole;
 
             private MomoleAdapter() {
-                momole = MomoleDAO.getInstance(getContext()).getAllMomole();
+                momole = MomoleDAO.getInstance(AusgabeActivity.this).getAllMomole();
+            }
+
+            @Override
+            public int getCount() { //gibt die Anzahl der verfügbaren Elemente zurück
+                return momole.size();
+            }
+
+            @Override
+            public Momole getItem(int position) { //gibt das Element an Stelle position zurück
+                return momole.get(position);
+            }
+
+            @Override
+            public long getItemId(int position) { //gibt die ID des Elements an Stelle position zurück
+                return getItem(position).getId();
+            }
+
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+
+                if (convertView == null) {
+                    LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = layoutInflater.inflate(R.layout.momole_list_view, null);
+                }
+
+                TextView allgr = (TextView) convertView.findViewById(R.id.etxt_fromdate);
+                TextView comp = (TextView) convertView.findViewById(R.id.etxt_todate);
+
+                Momole item = getItem(position);
+
+                allgr.setText(item.getAllgr());
+                comp.setText(item.getComp());
+
+                return convertView;
             }
         }
+
+    listview = (ListView) findViewById(R.id.listeAusgabe);
+    listview.setAdapter(new MomoleAdapter());
+    }
+
     }
 }
