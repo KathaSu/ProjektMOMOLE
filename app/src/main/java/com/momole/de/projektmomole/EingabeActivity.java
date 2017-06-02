@@ -52,15 +52,15 @@ public class EingabeActivity extends Activity {
                         momole.setFood(leb);
                         momole.setTime(System.currentTimeMillis());
                         MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                        /*Toast.makeText(EingabeActivity.this, R.id.Speichern, Toast.LENGTH_SHORT).show();*/
+                        Toast.makeText(EingabeActivity.this, R.id.Speichern, Toast.LENGTH_SHORT).show();
                         finish();
                     } catch (NumberFormatException e) {
-                       /* Toast.makeText(EingabeActivity.this, R.string.beschwerden, Toast.LENGTH_LONG).show();*/
-                    }/*else{
+                       Toast.makeText(EingabeActivity.this, R.string.beschwerden, Toast.LENGTH_LONG).show();
+                    }else{
                         Toast.makeText(EingabeActivity.this,
                                 R.string.beschwerden, Toast.LENGTH_LONG).show();
 
-                    }*/
+                    }
                 }
             }
         });
