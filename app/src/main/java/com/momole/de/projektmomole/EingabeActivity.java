@@ -37,6 +37,7 @@ public class EingabeActivity extends AppCompatActivity {
         b_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+            }
         });
         }
     }
