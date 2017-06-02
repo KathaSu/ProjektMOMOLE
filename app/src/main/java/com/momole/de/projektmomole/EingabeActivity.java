@@ -50,12 +50,15 @@ public class EingabeActivity extends Activity {
             public void onClick(View view) {
                 String leb = ((TextView) findViewById(R.id.Lebensmittel)).getText().toString();
                 String besch = ((TextView) findViewById(R.id.Beschwerden)).getText().toString();
+                if (besch.length() > 0){
                 try {
                     Momole momole = new Momole();
-                    momole.setFood(leb);
                     momole.setComp(besch);
+                    momole.setFood(leb);
                     momole.setTime(System.currentTimeMillis());
                     MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
+                    Toast.makeText(EingabeActivity.this, T.set.speichern_message, Toast.LENGTH_SHORT).show();
+                    finish()
                     finish();
                 }
             }
