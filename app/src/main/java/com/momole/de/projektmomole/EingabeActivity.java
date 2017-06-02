@@ -34,9 +34,6 @@ import com.momole.de.projektmomole.Database.model.Momole;
 import com.momole.de.projektmomole.Database.MomoleDAO;
 import com.momole.de.projektmomole.Database.DatabaseHelper;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
-
-
 public class EingabeActivity extends Activity {
 
     Button b_save;
@@ -50,26 +47,29 @@ public class EingabeActivity extends Activity {
             public void onClick(View view) {
                 String leb = ((TextView) findViewById(R.id.Lebensmittel)).getText().toString();
                 String besch = ((TextView) findViewById(R.id.Beschwerden)).getText().toString();
-                if (besch.length() > 0){
-                try {
-                    Momole momole = new Momole();
-                    momole.setComp(besch);
-                    momole.setFood(leb);
-                    momole.setTime(System.currentTimeMillis());
-                    MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                    Toast.makeText(EingabeActivity.this, T.set.speichern_message, Toast.LENGTH_SHORT).show();
-                    finish()
-                    finish();
+                if (besch.length() > 0) {
+                    try {
+                        Momole momole = new Momole();
+                        momole.setComp(besch);
+                        momole.setFood(leb);
+                        momole.setTime(System.currentTimeMillis());
+                        MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
+                        Toast.makeText(EingabeActivity.this, R.id.speichern_message, Toast.LENGTH_SHORT).show();
+                        finish();
+                    } catch (NumberFormatException e) {
+                        Toast.makeText(EingabeActivity.this, R.string.beschwerden_missing, Toast.LENGTH_LONG).show();
+                    }
+            else{
+
+                        Toast.makeText(EingabeActivity.this,
+                                R.string.beschwerden_missing, Toast.LENGTH_LONG).show();
+
+                    }
                 }
             }
-        }
+        });
     }
 }
-
-
-
-
-
 
 /*
                     Button btnTime, btnDate;
