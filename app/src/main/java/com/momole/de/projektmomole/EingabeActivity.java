@@ -48,20 +48,20 @@ public class EingabeActivity extends AppCompatActivity {
     TimePickerDialog timePickerDialog;
     DatePickerDialog datePickerDialog;
 
-    Calendar calender = Calendar.getInstance();
+    /*Calendar calender = Calendar.getInstance();*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
 
-        btnTime = (Button) findViewById(R.id.button);
+        /*btnTime = (Button) findViewById(R.id.button);
         btnTime.setOnClickListener(this);
         btnDate = (Button) findViewById(R.id.button2);
         btnDate.setOnClickListener(this);
 
         tvTime = (TextView) findViewById(R.id.textView3);
-        tvDate = (TextView) findViewById(R.id.textView5);
+        tvDate = (TextView) findViewById(R.id.textView5);*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
         //btn save
@@ -81,7 +81,7 @@ public class EingabeActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+   /* @Override
     public void onClick(View v) {
 
         calender = Calendar.getInstance();
@@ -130,6 +130,6 @@ public class EingabeActivity extends AppCompatActivity {
                 datePickerDialog.show();
                 break;
             }
+            }
+            }*/
         }
-    }
-}
