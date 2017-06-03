@@ -38,19 +38,6 @@ public class EingabeActivity extends AppCompatActivity {
 
     Button btn;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eingabe2);
-
-        btn = (Button) findViewById(R.id.b_save);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(EingabeActivity.this, "Daten wurden gespeichtert", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
     Button btnTime, btnDate;
     TextView tvTime, tvDate;
 
@@ -60,7 +47,7 @@ public class EingabeActivity extends AppCompatActivity {
     Calendar calender = Calendar.getInstance();
 
     @Override
-    protected void onCreate (Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
 
@@ -71,10 +58,20 @@ public class EingabeActivity extends AppCompatActivity {
 
         tvTime = (TextView) findViewById(R.id.textView3);
         tvDate = (TextView) findViewById(R.id.textView5);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_eingabe2);
+        //btn save
+        btn = (Button) findViewById(R.id.b_save);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(EingabeActivity.this, "Daten wurden gespeichtert", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
-    public void onClick (View v){
+    public void onClick(View v) {
 
         calender = Calendar.getInstance();
 
@@ -121,33 +118,7 @@ public class EingabeActivity extends AppCompatActivity {
 
                 datePickerDialog.show();
                 break;
-}
-
-
-
-        /*
-        findViewById(R.id.b_save).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String leb = ((TextView) findViewById(R.id.Lebensmittel)).getText().toString();
-                String besch = ((TextView) findViewById(R.id.Beschwerden)).getText().toString();
-                if (besch.length() > 0) {
-                    try {
-                        Momole momole = new Momole();
-                        momole.setComp(besch);
-                        momole.setFood(leb);
-                        momole.setTime(System.currentTimeMillis());
-                        MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                        Toast.makeText(EingabeActivity.this, R.string.save_payment_message, Toast.LENGTH_SHORT).show();
-                        finish();
-                    }else {
-
-                        Toast.makeText(EingabeActivity.this,
-                                R.string.Beschwerden, Toast.LENGTH_LONG).show();
-
-                    }
-                }
             }
-        });
+        }
     }
-}*/
+}
