@@ -51,7 +51,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ausgabe2);
 
-        dateFormatter = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
 
         findViewsById();
         setDateTimeField();
@@ -156,7 +156,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
             }
 
             TextView date = (TextView) convertView.findViewById(R.id.rowMOMOLEdate);
-            TextView time = (TextView) convertView.findViewById(R.id.rowMOMOLEtime);
+            /*TextView time = (TextView) convertView.findViewById(R.id.rowMOMOLEtime);*/
             TextView lebensmittel = (TextView) convertView.findViewById(R.id.rowMOMOLElebensmittel);
             TextView beschwerden = (TextView) convertView.findViewById(R.id.rowMOMOLEbeschwerde);
             TextView allergengruppe = (TextView) convertView.findViewById(R.id.rowMOMOLEallergen);
@@ -164,7 +164,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
             Momole momole = getItem(position);
 
             date.setText(String.valueOf(momole.getDate()));
-            time.setText(String.valueOf(momole.getTime()));
+            /*time.setText(String.valueOf(momole.getTime()));*/
             lebensmittel.setText(String.valueOf(momole.getFood()));
             beschwerden.setText(String.valueOf(momole.getComp()));
             allergengruppe.setText(String.valueOf(momole.getAllgr()));

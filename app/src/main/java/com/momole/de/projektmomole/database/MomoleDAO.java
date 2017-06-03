@@ -88,8 +88,8 @@ public class MomoleDAO {
     public List<Momole> getAllMomoleBetween(String date1, String date2) {
         open();
         Cursor cursor = database.query(TBL, //Table
-                new String[] {TBL_ID, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
-                TBL_DATE + " <= " + date1 + " AND " + TBL_DATE + " >= " + date2,//Selection, can't do >= with selection arguments
+                new String[] {TBL_ID, TBL_DATE, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
+                TBL_DATE + " BETWEEN '" + date1 + "' AND '" + date2 + "'",//Selection, can't do >= with selection arguments
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
                 null, //Having, Selection on Group By fields (HAVING [field]=1)

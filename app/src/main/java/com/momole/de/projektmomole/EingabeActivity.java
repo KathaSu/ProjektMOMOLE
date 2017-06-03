@@ -28,21 +28,21 @@ import com.momole.de.projektmomole.database.model.Momole;
 
 public class EingabeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private EditText TextLebensmittel, TextAllergengruppe, TextBeschwerde, TextDate, TextTime;
+    private EditText TextLebensmittel, TextAllergengruppe, TextBeschwerde, TextDate/*, TextTime*/;
 
-    private TimePickerDialog TextTimePickerDialog;
+    /*private TimePickerDialog TextTimePickerDialog;*/
     private DatePickerDialog TextDatePickerDialog;
 
     private SimpleDateFormat dateFormatterDate;
-    private SimpleDateFormat dateFormatterTime;
+    /*private SimpleDateFormat dateFormatterTime;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
 
-        dateFormatterDate = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
-        dateFormatterTime = new SimpleDateFormat("HH:mm", Locale.GERMANY);
+        dateFormatterDate = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
+        /*dateFormatterTime = new SimpleDateFormat("HH:mm", Locale.US);*/
 
         findViewsById();
         setDateTimeField();
@@ -54,7 +54,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
                 String beschwerde = ((TextView) findViewById(R.id.beschwerden_eintragen)).getText().toString();
                 String allergengruppe = ((TextView) findViewById(R.id.allergengruppe_eintragen)).getText().toString();
                 String date = ((TextView) findViewById(R.id.datum_eintragen)).getText().toString();
-                String time = ((TextView) findViewById(R.id.zeit_eintragen)).getText().toString();
+                /*String time = ((TextView) findViewById(R.id.zeit_eintragen)).getText().toString();*/
 
                 if (date.length() > 0) {
                     try {
@@ -63,7 +63,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
                         Momole.setComp(beschwerde);
                         Momole.setAllgr(allergengruppe);
                         Momole.setDate(date);
-                        Momole.setTime(time);
+                        /*Momole.setTime(time);*/
                         MomoleDAO.getInstance(EingabeActivity.this).addMomole(Momole);
                         Toast.makeText(EingabeActivity.this, "Eintrag gespeichert", Toast.LENGTH_SHORT).show();
                         finish();
@@ -89,13 +89,13 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
         TextDate = (EditText) findViewById(R.id.datum_eintragen);
         TextDate.setInputType(InputType.TYPE_NULL);
 
-        TextTime = (EditText) findViewById(R.id.zeit_eintragen);
-        TextTime.setInputType(InputType.TYPE_NULL);
+        /*TextTime = (EditText) findViewById(R.id.zeit_eintragen);
+        TextTime.setInputType(InputType.TYPE_NULL);*/
     }
 
     private void setDateTimeField() {
         TextDate.setOnClickListener(this);
-        TextTime.setOnClickListener(this);
+        /*TextTime.setOnClickListener(this);*/
 
         Calendar newCalender = Calendar.getInstance();
 
@@ -109,7 +109,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
 
         },newCalender.get(Calendar.YEAR), newCalender.get(Calendar.MONTH), newCalender.get(Calendar.DAY_OF_MONTH));
 
-        TextTimePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+        /*TextTimePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
 
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
                 Calendar newTime = Calendar.getInstance();
@@ -117,7 +117,7 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
                 TextTime.setText(dateFormatterTime.format(newTime.getTime()));
             }
 
-        },newCalender.get(Calendar.HOUR_OF_DAY), newCalender.get(Calendar.MINUTE), true);
+        },newCalender.get(Calendar.HOUR_OF_DAY), newCalender.get(Calendar.MINUTE), true);*/
 
     }
 
@@ -126,8 +126,8 @@ public class EingabeActivity extends AppCompatActivity implements View.OnClickLi
         if (view == TextDate)  {
             TextDatePickerDialog.show();
         }
-        else if (view == TextTime) {
+        /*else if (view == TextTime) {
             TextTimePickerDialog.show();
-        }
+        }*/
     }
 }
