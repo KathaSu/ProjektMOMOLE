@@ -12,28 +12,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:weightSum="1">
+        android:layout_margin="10dp">
 
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="von:"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/etxt_fromdate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="5"
-            tools:text="von"
             android:focusable="false"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="bis:"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/etxt_todate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="5"
-            tools:text="bis"
             android:focusable="false"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <Button
             android:id="@+id/suche"
@@ -41,7 +59,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Suchen" />
-
 
     </LinearLayout>
 

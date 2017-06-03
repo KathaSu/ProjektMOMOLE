@@ -21,6 +21,8 @@ import android.widget.TextView;
 import com.momole.de.projektmomole.database.MomoleDAO;
 import com.momole.de.projektmomole.database.model.Momole;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -49,7 +51,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ausgabe2);
 
-        dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        dateFormatter = new SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY);
 
         findViewsById();
         setDateTimeField();
@@ -122,8 +124,11 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
         public List<Momole> momole;
 
+        String fromDate = ((TextView) findViewById(R.id.etxt_fromdate)).getText().toString();
+        String toDate = ((TextView) findViewById(R.id.etxt_todate)).getText().toString();
+
         public MomoleAdapter() {
-            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(String.valueOf(fromDateEtxt), String.valueOf(toDateEtxt));
+            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(fromDate, toDate);
         }
 
 
@@ -169,7 +174,7 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
         @Override
         public void notifyDataSetChanged() {
-            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(String.valueOf(fromDateEtxt), String.valueOf(toDateEtxt));
+            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(fromDate, toDate);
             super.notifyDataSetChanged();
         }
     }
