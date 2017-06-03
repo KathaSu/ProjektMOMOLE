@@ -34,12 +34,28 @@ import com.momole.de.projektmomole.Database.model.Momole;
 import com.momole.de.projektmomole.Database.MomoleDAO;
 import com.momole.de.projektmomole.Database.DatabaseHelper;
 
-public class EingabeActivity extends Activity {
+public class EingabeActivity extends AppCompatActivity {
+
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
+
+        btn = (Button) findViewById(R.id.b_save);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(EingabeActivity.this, "Daten wurden gespeichtert", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+}
+
+
+
+        /*
         findViewById(R.id.b_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,13 +68,12 @@ public class EingabeActivity extends Activity {
                         momole.setFood(leb);
                         momole.setTime(System.currentTimeMillis());
                         MomoleDAO.getInstance(EingabeActivity.this).addMomole(momole);
-                        Toast.makeText(EingabeActivity.this, R.id.Speichern, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EingabeActivity.this, R.string.save_payment_message, Toast.LENGTH_SHORT).show();
                         finish();
-                    } catch (NumberFormatException e) {
-                       Toast.makeText(EingabeActivity.this, R.string.beschwerden, Toast.LENGTH_LONG).show();
-                    }else{
+                    }else {
+
                         Toast.makeText(EingabeActivity.this,
-                                R.string.beschwerden, Toast.LENGTH_LONG).show();
+                                R.string.Beschwerden, Toast.LENGTH_LONG).show();
 
                     }
                 }
