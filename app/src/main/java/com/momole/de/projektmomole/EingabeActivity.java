@@ -37,8 +37,8 @@ import com.momole.de.projektmomole.Database.DatabaseHelper;
 
 public class EingabeActivity extends AppCompatActivity {
 
-    EditText Lebensmittel;
-    EditText Beschwerden;
+    EditText lebensmittel;
+    EditText beschwerden;
 
     Button btn;
 
@@ -67,16 +67,16 @@ public class EingabeActivity extends AppCompatActivity {
         //btn save
         btn = (Button) findViewById(R.id.b_save);
         //Edit txt
-        Lebensmittel = (EditText) findViewById(R.id.Lebensmittel);
-        Beschwerden = (EditText) findViewById(R.id.Beschwerden);
+        lebensmitte = (EditText) findViewById(R.id.Lebensmittel);
+        beschwerden = (EditText) findViewById(R.id.Beschwerden);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String Lebensmittel = Lebensmittel.getText().toString();
-                final String Beschwerden = Beschwerden.getText().toSring();
+                final String Lebensmittel = lebensmittel.getText().toString();
+                final String Beschwerden = beschwerden.getText().toSring();
                 Toast.makeText(EingabeActivity.this, "Daten wurden gespeichtert", Toast.LENGTH_LONG).show();
-                System.out.println("Lebensmittel " + Lebensmittel + "\n Beschwerden " + Beschwerden);
+                System.out.println("Lebensmittel " + lebensmittel + "\n Beschwerden " + beschwerden);
             }
         });
     }
