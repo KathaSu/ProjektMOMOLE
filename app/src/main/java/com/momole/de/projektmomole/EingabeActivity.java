@@ -68,13 +68,13 @@ public class EingabeActivity extends AppCompatActivity {
         btn = (Button) findViewById(R.id.b_save);
         //Edit txt
         lebensmittel = (EditText) findViewById(R.id.lebensmittel);
-        Beschwerden = (EditText) findViewById(R.id.Beschwerden);
+        beschwerden = (EditText) findViewById(R.id.beschwerden);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final String Lebensmittel = lebensmittel.getText().toString();
-                final String Beschwerden = Beschwerden.getText().toSring();
+                final String Beschwerden = beschwerden.getText().toString();
                 Toast.makeText(EingabeActivity.this, "Daten wurden gespeichtert", Toast.LENGTH_LONG).show();
                 System.out.println("Lebensmittel " + lebensmittel + "\n Beschwerden " + beschwerden);
             }
