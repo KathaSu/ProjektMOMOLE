@@ -40,6 +40,8 @@ public class EingabeActivity extends AppCompatActivity {
     EditText lebensmittel;
     EditText beschwerden;
 
+    EditText edit;
+
     Button btn;
 
     Button btnTime, btnDate;
@@ -55,6 +57,8 @@ public class EingabeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eingabe2);
 
+
+
         /*btnTime = (Button) findViewById(R.id.button);
         btnTime.setOnClickListener(this);
         btnDate = (Button) findViewById(R.id.button2);
@@ -62,8 +66,7 @@ public class EingabeActivity extends AppCompatActivity {
 
         tvTime = (TextView) findViewById(R.id.textView3);
         tvDate = (TextView) findViewById(R.id.textView5);*/
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eingabe2);
+
         //btn save
         btn = (Button) findViewById(R.id.b_save);
         //Edit txt
@@ -80,6 +83,7 @@ public class EingabeActivity extends AppCompatActivity {
             }
         });
     }
+
 
    /* @Override
     public void onClick(View v) {
@@ -132,4 +136,4 @@ public class EingabeActivity extends AppCompatActivity {
             }
             }
             }*/
-        }
+}
