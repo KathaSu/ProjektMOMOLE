@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.momole.de.projektmomole.Fragebutton">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:text="Wie kann Ihnen diese App helfen? \n \n \nWenn Sie in regelmäßigen Abständen leichte bis mäßige Beschwerden haben und vermuten, diese könnten mit einer Lebensmittelunverträglichkeit zusammenhängen, dann bietet Ihnen diese App die Möglichkeit sowohl die verzehrten Lebensmittel, mit den enthaltenen Allergenen, als auch die auftretenden Beschwerden zu dokumentieren. "
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+</android.support.constraint.ConstraintLayout>
