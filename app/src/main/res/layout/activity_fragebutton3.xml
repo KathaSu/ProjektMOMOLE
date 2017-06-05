@@ -16,7 +16,7 @@
         android:id="@+id/textView2"
         android:layout_width="368dp"
         android:layout_height="560dp"
-        android:text="Wann sollte man einen Arzt aufsuchen? \n \n \nEinen Arzt sollte man immer dann aufsuchen, wenn es ohne einen ersichtlichen Grund zu akuten Beschwerden kommt oder bereits vorhandene Beschwerden schlimmer werden. Bevor Sie diese App verwenden sollten Sie mit Ihren wiederkehrenden Beschwerden immer einen Arzt aufsuchen um mögliche andere Ursachen ausschließen zu lassen. Sprechen Sie Ihren Arzt an, wenn Sie den Verdacht haben, dass Sie unter einer Nahrungsmittelunverträglichkeit leiden und nutzen Sie diese App als Unterstützung bei der ärztlichen Diagnosestellung. Wichtig! : Eine Unverträglichkeit sollte nicht mit einer Allergie verwechselt werden. Bei schweren, plötzlich auftretenden Beschwerden, sowie Atemnot sollten Sie unverzüglich einen Arzt aufsuchen."
+        android:text="Was ist mit Medikamenten und Umwelteinflüssen? \n\n\nMedikamente und andere Einflüsse wie z.B. Klima, Rauchen, Staub, Gase und Gifte etc. können die selben Beschwerden hervorrufen, wie Nahrungsmittelunverträglichkeiten oder können eine zeitlich begrenzte Unverträglichkeit auslösen. Bitte Fragen Sie Ihren Arzt oder Apotheker bei Medikamenten nach Neben- bzw. Wechselwirkungen und seien Sie achtsam bei schädlichen Umwelteinflüssen."
         android:textSize="20dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="-6dp" />

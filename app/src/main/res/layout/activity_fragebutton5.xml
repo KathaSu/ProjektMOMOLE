@@ -14,22 +14,23 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="368dp"
-            android:layout_height="560dp"
-            android:text="Woher weiß ich, welches Allergen in meinem Lebensmittel enthalten ist? \n \n
-Allergene sind in verschiedene Gruppen unterteilt: Gluten, Fructose, Laktose und Histamin. In diese Gruppen fallen jeweils unterschiedliche Lebensmittel. Da diese hier aufzulisten zu einer unübersichtlichen, sehr großen Datenmenge führen würde, haben wir euch Links zu Seiten, die genau beschreiben, was zu den einzelnen Allergengruppen gehört hinterlegt. \n
-Für eine erste Orientierung ist zu sagen:\n
-Gluten enthalten in: Getreide, also beispielsweise Brot, Brötchen, Pizza Gnocchi und paniertes Fleisch.\n
-weitere Infos auf: http://www.dzg-online.de/glutenhaltige-nahrungsmittel.28.0.html\n \n
+            android:layout_width="360dp"
+            android:layout_height="5000dp"
+            android:text="Woher weiß ich, welches Allergen in meinem Lebensmittel enthalten ist?\n
+In dieser App ist es möglich die einzelnen Lebensmittel vier Gruppen zuzuordnen. Diese vier Inhaltsstoffe führen am häufigsten zu Unverträglichkeiten: \n -Gluten \n -Fructose\n -Laktose\n -Histamin \n \n
+natürlich können wir hier nicht alle Lebensmittel auflisten, deshalb kann der Link kopiert und Im Browser für weitere Informationen aufgerufen werden:\n
 
-Fructose enthalten in bestimmten Zuckerarten, zum Beispiel: Rohrzucker, Saccharose und Sirup.\n
-weiter Infos auf: http://fructoseintoleranz.de/?p=130 \n\n
+Gluten:\nz.B. Weizen, Roggen, Gerste, Dinkel, Couscous, panierter Fisch, Zusatzstoffe in Milch und Wurstwaren \n
+weitere Infos auf: \nhttp://www.dzg-online.de/glutenhaltige-nahrungsmittel.28.0.html  \n \n
 
-Laktose enthalten in beispielsweise: Milchzucker, Kuhmilch, Schafmilch, Ziegenmilch und Sahne.\n
-weitere Infos auf: http://www.pures-geniessen.com/info-intoleranz-unvertraeglichkeit/laktoseintoleranz-milchzuckerunvertraeglichkeit/lebensmitteltabelle-laktosetabelle.html \n \n
+Fructose:\nz.B. Rohrzucker; Obst, Sirup.\n
+weiter Infos auf: \nhttp://fructoseintoleranz.de/?p=130 \n\n
 
-Histamin ist zum Beispiel in: fangfrischem Fisch, eingelegte, bzw. konservierte Lebensmittel und Schokolade.\n
-weiter Infos hier: https://www.nahrungsmittel-intoleranz.com/histaminintoleranz-informationen/histamingehalte-von-lebensmitteln.html \n\n"
+Laktose:\nz.B.  Milchzucker, Kuhmilch, Schafmilch, Ziegenmilch, Sahne. Käse\n
+weitere Infos auf: \nhttp://www.pures-geniessen.com/info-intoleranz-unvertraeglichkeit/laktoseintoleranz-milchzuckerunvertraeglichkeit/lebensmitteltabelle-laktosetabelle.html \n \n
+
+Histamin: \nz.B. fangfrischem Fisch, eingelegte, Käse, Schokolade, Essig, Alkohol\n
+weiter Infos auf: \nhttps://www.nahrungsmittel-intoleranz.com/histaminintoleranz-informationen/histamingehalte-von-lebensmitteln.html \n\n"
 
             android:textSize="20dp"
             tools:layout_editor_absoluteX="8dp"
