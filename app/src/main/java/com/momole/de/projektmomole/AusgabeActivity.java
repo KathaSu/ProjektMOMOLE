@@ -2,17 +2,33 @@ package com.momole.de.projektmomole;
 
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.app.Activity;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.momole.de.projektmomole.database.MomoleDAO;
+import com.momole.de.projektmomole.database.model.Momole;
+
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
+
+import static java.security.AccessController.getContext;
 
 public class AusgabeActivity extends AppCompatActivity implements OnClickListener {
 
@@ -25,15 +41,32 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
     private SimpleDateFormat dateFormatter;
 
+    private Button ButtonSuche;
+
+    private ListView listview;
+    private MomoleAdapter listAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ausgabe2);
 
-        dateFormatter = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.GERMANY);
 
         findViewsById();
         setDateTimeField();
+
+        ButtonSuche.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                listAdapter = new MomoleAdapter();
+                listview.setAdapter(listAdapter);
+
+            }
+
+        });
+
     }
 
     private void findViewsById() {
@@ -43,6 +76,11 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
 
         toDateEtxt = (EditText) findViewById(R.id.etxt_todate);
         toDateEtxt.setInputType(InputType.TYPE_NULL);
+
+        ButtonSuche = (Button) findViewById(R.id.suche);
+
+        listview = (ListView) findViewById(R.id.listeAusgabe);
+
     }
 
     private void setDateTimeField() {
@@ -79,6 +117,68 @@ public class AusgabeActivity extends AppCompatActivity implements OnClickListene
             toDatePickerDialog.show();
         }
     }
+
+
+
+    class MomoleAdapter extends BaseAdapter{
+
+        public List<Momole> momole;
+
+        String fromDate = ((TextView) findViewById(R.id.etxt_fromdate)).getText().toString();
+        String toDate = ((TextView) findViewById(R.id.etxt_todate)).getText().toString();
+
+        public MomoleAdapter() {
+            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(fromDate, toDate);
+        }
+
+
+        @Override
+        public int getCount() {
+            return momole.size();
+        }
+
+        @Override
+        public Momole getItem(int position) {
+            return momole.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return momole.get(position).getId();
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            if (convertView == null) {
+                LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = layoutInflater.inflate(R.layout.row_ausgabe, null);
+            }
+
+            TextView date = (TextView) convertView.findViewById(R.id.rowMOMOLEdate);
+            /*TextView time = (TextView) convertView.findViewById(R.id.rowMOMOLEtime);*/
+            TextView lebensmittel = (TextView) convertView.findViewById(R.id.rowMOMOLElebensmittel);
+            TextView beschwerden = (TextView) convertView.findViewById(R.id.rowMOMOLEbeschwerde);
+            TextView allergengruppe = (TextView) convertView.findViewById(R.id.rowMOMOLEallergen);
+
+            Momole momole = getItem(position);
+
+            date.setText(String.valueOf(momole.getDate()));
+            /*time.setText(String.valueOf(momole.getTime()));*/
+            lebensmittel.setText(String.valueOf(momole.getFood()));
+            beschwerden.setText(String.valueOf(momole.getComp()));
+            allergengruppe.setText(String.valueOf(momole.getAllgr()));
+
+            return convertView;
+        }
+
+        @Override
+        public void notifyDataSetChanged() {
+            momole = MomoleDAO.getInstance(getApplicationContext()).getAllMomoleBetween(fromDate, toDate);
+            super.notifyDataSetChanged();
+        }
+    }
+
 
 
 }

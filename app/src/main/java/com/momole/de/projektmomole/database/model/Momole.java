@@ -7,8 +7,8 @@ package com.momole.de.projektmomole.database.model;
 public class Momole {
 
     private long id = -1;
-    private long date;
-    private long time;
+    private String date;
+    private String time;
     private String food;
     private String comp;
     private String allgr;
@@ -20,11 +20,11 @@ public class Momole {
         this.id = id;
     }
 
-    public long getDate() { return date; }
-    public void setDate(long date) { this.date = date; }
+    public String getDate() { return date; }
+    public void setDate(String date) { this.date = date; }
 
-    public long getTime() { return time; }
-    public void setTime(long time) { this.time = time; }
+    public String getTime() { return time; }
+    public void setTime(String time) { this.time = time; }
 
     public String getFood() {
         return food;

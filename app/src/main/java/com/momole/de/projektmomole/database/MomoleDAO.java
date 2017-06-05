@@ -27,13 +27,13 @@ public class MomoleDAO {
     public static final String TBL_ALLERGYGROUP = "allgr";
 
     //sql statement of the Momole table
-    public static final String CREATE_TBL = "CREATE TBL" + TBL + "("
-            + TBL_ID + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-            + TBL_DATE + "INTEGER NOT NULL,"
-            + TBL_TIME + "INTEGER NOT NULL,"
-            + TBL_FOOD + "INTEGER NOT NULL,"
-            + TBL_COMPLAINT + "INTEGER NOT NULL,"
-            + TBL_ALLERGYGROUP + "TEXT"
+    public static final String CREATE_TBL = "CREATE TABLE " + TBL + "("
+            + TBL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TBL_DATE + " TEXT NOT NULL, "
+            + TBL_TIME + " TEXT, "
+            + TBL_FOOD + " TEXT, "
+            + TBL_COMPLAINT + " TEXT, "
+            + TBL_ALLERGYGROUP + " TEXT "
             + ");";
 
     private static MomoleDAO instance;
@@ -85,16 +85,16 @@ public class MomoleDAO {
         return null;
     }
 
-    public List<Momole> getAllMomoleAfter(long date1, long date2) {
+    public List<Momole> getAllMomoleBetween(String date1, String date2) {
         open();
         Cursor cursor = database.query(TBL, //Table
-                new String[] {TBL_ID, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
-                TBL_DATE + "<=" + date1 + "AND" + TBL_DATE + ">=" + date2,//Selection, can't do >= with selection arguments
+                new String[] {TBL_ID, TBL_DATE, TBL_TIME, TBL_FOOD, TBL_COMPLAINT, TBL_ALLERGYGROUP}, //Fields, null would also return all columns / fields
+                TBL_DATE + " BETWEEN '" + date1 + "' AND '" + date2 + "'",//Selection, can't do >= with selection arguments
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
                 null, //Having, Selection on Group By fields (HAVING [field]=1)
                 null, //Limit, limits the selection, e. g. 10 for 10 entries
-                TBL_DATE + " ASC"); //Order by timestamp, ascending
+                null); //Order by timestamp, ascending
         List<Momole> momole = new LinkedList<>();
         if (cursor.moveToFirst()) { // read in the the resu1lt row by row, if data available
             while (!cursor.isAfterLast()) {
@@ -182,10 +182,10 @@ public class MomoleDAO {
         momole.setId(cursor.getLong(index));
 
         index = cursor.getColumnIndex(TBL_DATE);
-        momole.setDate(cursor.getLong(index));
+        momole.setDate(cursor.getString(index));
 
         index = cursor.getColumnIndex(TBL_TIME);
-        momole.setTime(cursor.getLong(index));
+        momole.setTime(cursor.getString(index));
 
         index = cursor.getColumnIndex(TBL_FOOD);
         momole.setFood(cursor.getString(index));
