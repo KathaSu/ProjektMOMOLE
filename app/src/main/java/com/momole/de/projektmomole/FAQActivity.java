@@ -23,8 +23,8 @@ public class FAQActivity extends AppCompatActivity {
         Intent intent = new Intent (this, Fragebutton2.class);
         startActivity(intent);
     }
-    public void goTofrage7 (View view){
-        Intent intent = new Intent (this, Fragebutton7.class);
+    public void goTofrage8 (View view){
+        Intent intent = new Intent (this, fragebutton8.class);
         startActivity(intent);
     }
     public void goTofrage3 (View view){
@@ -39,12 +39,10 @@ public class FAQActivity extends AppCompatActivity {
         Intent intent = new Intent (this, Fragebutton5.class);
         startActivity(intent);
     }
-    public void goTofrage6 (View view){
-        Intent intent = new Intent (this, Fragebutton6.class);
-        startActivity(intent);
-    }
 
     }
+
+
 
 
 

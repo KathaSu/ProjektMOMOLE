@@ -15,7 +15,7 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="368dp"
-            android:layout_height="560dp"
+            android:layout_height="5600dp"
             android:text="Woher weiß ich, welches Allergen in meinem Lebensmittel enthalten ist? \n \n
 Allergene sind in verschiedene Gruppen unterteilt: Gluten, Fructose, Laktose und Histamin. In diese Gruppen fallen jeweils unterschiedliche Lebensmittel. Da diese hier aufzulisten zu einer unübersichtlichen, sehr großen Datenmenge führen würde, haben wir euch Links zu Seiten, die genau beschreiben, was zu den einzelnen Allergengruppen gehört hinterlegt. \n
 Für eine erste Orientierung ist zu sagen:\n

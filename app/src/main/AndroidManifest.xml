@@ -28,7 +28,7 @@
         <activity android:name=".Fragebutton3" />
         <activity android:name=".Fragebutton4" />
         <activity android:name=".Fragebutton5" />
-        <activity android:name=".Fragebutton7"></activity>
+        <activity android:name=".fragebutton8"></activity>
     </application>
 
 </manifest>

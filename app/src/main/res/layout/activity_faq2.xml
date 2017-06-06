@@ -61,11 +61,11 @@
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Was ist mit Medikamenten und Umwelteinflüssen?"
-        android:onClick="goTofrage7"
+        android:onClick="goTofrage8"
         tools:ignore="HardcodedText"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="433dp" />
