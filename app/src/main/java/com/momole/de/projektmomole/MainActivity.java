@@ -69,8 +69,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
+            Intent faq = new Intent (MainActivity.this, FAQActivity.class);
+            startActivity(faq);        }
 
         return super.onOptionsItemSelected(item);
     }
