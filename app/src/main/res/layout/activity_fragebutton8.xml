@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.momole.de.projektmomole.Fragebutton7" >
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="368dp"
+            android:layout_height="560dp"
+            android:text="Was ist mit Medikamenten und Umwelteinflüssen? \n \n \nBestimmte Medikamente und Umwelteinflüsse können ähnliche Beschwerden auslösen, wie Nahrungsmittelunverträglichkeiten.Bitte bedenken Sie das und Fragen Sie bei zu möglichen Wechsel- und Nebenwirkungen immer einen Arzt oder Apotheker und versuchen sie schädliche Umwelteinflüsse zu vermeiden"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="-6dp" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
