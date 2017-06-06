@@ -9,6 +9,29 @@
     android:orientation="vertical"
     tools:context="com.momole.de.projektmomole.EingabeActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textview5"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:text="Datum"/>
+
+        <EditText
+            android:id="@+id/datum_eintragen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"/>
+
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,27 +95,7 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp">
 
-        <TextView
-            android:id="@+id/textview5"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="Datum"/>
-
-        <EditText
-            android:id="@+id/datum_eintragen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="false"/>
-
-
-    </LinearLayout>
 
 
     <!--<LinearLayout
